@@ -21,6 +21,15 @@ class CategoryViewController: SwipeTableViewController {
         tableView.rowHeight = 80.0
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let navBar = navigationController?.navigationBar else {fatalError("navigation controller does not exist")}
+        let app = UINavigationBarAppearance()
+        app.backgroundColor = UIColor(hexString: "1D9BF6")
+        navBar.backgroundColor = UIColor(hexString: "1D9BF6")
+        navBar.scrollEdgeAppearance = app
+        
+    }
+    
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         
